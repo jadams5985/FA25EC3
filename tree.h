@@ -48,6 +48,10 @@ class Tree {
 private:
     Node<T>* root;
 
+    Node<T>* findParentDFS(Node<T> &current, const string &target) {
+        
+    }
+
 public:
     Tree() : root(nullptr) {};
 
@@ -57,13 +61,15 @@ public:
     };
 
     void addNode(const string &parentID, const string &childID, const T &value) {
-
+        auto parent = findNode(parentID);
+        auto child = new Node<T>(childID, value);
+        parent->children = child;
     };
     // TODO: Find parent, create child, link parent to child
     // TODO: Support repeated children under multiple parents
 
     Node<T>* findNode(const string &id) {
-
+        return findParentDFS(root, id);
     };
     // TODO: Use DFS or BFS to search tree
 

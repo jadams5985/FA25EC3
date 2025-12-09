@@ -17,7 +17,11 @@ Bugs:
 Solution:
  - N/A
 Commits:
- - N/A
+ - added node constructor
+   - creates an object for the node with an ID, and a template value.
+     initializes values when created.
+ - added tree constructor
+   - creates an object for the tree with the root initialized to a nullptr
 Files Changed:
  - tree.h
  - developer_log.md
